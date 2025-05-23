@@ -107,3 +107,21 @@ body {
     font-family: 'AtkinsonMonoSemiBold', monospace;
     font-size: 120%;
 }
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    filter: brightness(0) invert(1);
+    transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
