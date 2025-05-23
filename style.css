@@ -1,24 +1,17 @@
 @font-face {
     font-family: 'AtkinsonMonoSemiBold';
     src: url('AtkinsonHyperlegibleMono-SemiBold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
 }
 
 @font-face {
     font-family: 'AtkinsonMonoMedium';
     src: url('AtkinsonHyperlegibleMono-Medium.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
 }
 
 @font-face {
     font-family: 'SpecialElite';
     src: url('SpecialElite-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
 }
-
 
 body {
     margin: 0;
@@ -43,78 +36,6 @@ body {
     text-align: center;
 }
 
-.about {
-    text-align: start;
-    margin: 10% 0 0 10%;
-}
-
-.section-title {
-    font-size: 150%;
-    color: aliceblue;
-    margin: 0;
-    font-weight: 500;
-}
-
-.section-text {
-    font-size: 100%;
-    color: aliceblue;
-    margin: 0;
-    font-weight: 400;
-}
-
-.container {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 5%;
-    gap: 5%;
-}
-
-.about {
-    flex: 1;
-    font-family: 'AtkinsonMonoMedium', monospace;
-}
-
-.main-content {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.projects {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 50px;
-}
-
-.project-card {
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    transition: transform 0.2s ease-in-out;
-}
-
-.project-card:hover {
-    transform: scale(1.05);
-}
-
-.project-card img {
-    border-radius: 12px;
-    width: 300px;
-    height: 200px;
-    object-fit: cover;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.project-title {
-    margin-top: 10px;
-    font-family: 'AtkinsonMonoSemiBold', monospace;
-    font-size: 120%;
-}
-
 .social-icons {
     font-family: 'SpecialElite', monospace;
     display: flex;
@@ -132,4 +53,68 @@ body {
 
 .social-icons a:hover {
     transform: scale(1.1);
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 5%;
+    gap: 60px;
+}
+
+.about {
+    width: 35%;
+    font-family: 'AtkinsonMonoMedium', monospace;
+    color: aliceblue;
+}
+
+.section-title {
+    font-size: 150%;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.section-text {
+    font-size: 100%;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.skills-list {
+    list-style: square;
+    padding-left: 20px;
+    color: aliceblue;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 60%;
+}
+
+.project-card {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-card img {
+    border-radius: 12px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.project-title {
+    margin-top: 10px;
+    font-family: 'AtkinsonMonoSemiBold', monospace;
+    font-size: 120%;
 }
