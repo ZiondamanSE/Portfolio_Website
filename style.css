@@ -1,6 +1,56 @@
+@font-face {
+    font-family: 'AtkinsonMonoSemiBold';
+    src: url('AtkinsonHyperlegibleMono-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AtkinsonMonoMedium';
+    src: url('AtkinsonHyperlegibleMono-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body {
     margin: 0;
     padding: 0;
     background: url('Background.gif') no-repeat center center fixed;
     background-size: cover;
+}
+
+.name {
+    font-family: 'AtkinsonMonoSemiBold', monospace;
+    font-size: 300%;
+    color: aliceblue;
+    margin: 5% 0 0 0;
+    text-align: center;
+}
+
+.title {
+    font-family: 'AtkinsonMonoMedium', monospace;
+    font-size: 150%;
+    color: aliceblue;
+    margin: 0;
+    text-align: center;
+}
+
+.about {
+    text-align: start;
+    margin: 10% 0 0 10%;
+}
+
+.section-title {
+    font-size: 150%;
+    color: aliceblue;
+    margin: 0;
+    font-weight: 500;
+}
+
+.section-text {
+    font-size: 100%;
+    color: aliceblue;
+    margin: 0;
+    font-weight: 400;
 }
