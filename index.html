@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Audio with controls for testing (remove 'controls' when done testing) -->
   <audio id="background-audio" src="background.mp3" loop></audio>
 
   <div class="name-title">
@@ -64,26 +65,34 @@
     </div>
   </div>
   
-    <footer class="site-footer">
+  <footer class="site-footer">
     <p>DESIGN BY FLESH, PRODUCTION OF MACHINE, PRODUCED BY MAN.</p>
-    <P> - ZIONDAMAN - </P>
+    <p> - ZIONDAMAN - </p>
   </footer>
+
+  <!-- Audio playback script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const audio = document.getElementById('background-audio');
+      audio.volume = 1.0;
+
+      const startAudio = () => {
+        console.log("User interaction detected, attempting to play audio...");
+        audio.play().then(() => {
+          console.log("Audio playback started!");
+        }).catch(err => {
+          console.warn("Audio playback failed:", err);
+        });
+
+        // Remove listeners after first attempt
+        document.removeEventListener('click', startAudio);
+        document.removeEventListener('keydown', startAudio);
+      };
+
+      // Trigger on first click or key press
+      document.addEventListener('click', startAudio);
+      document.addEventListener('keydown', startAudio);
+    });
+  </script>
 </body>
-
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    const audio = document.getElementById('background-audio');
-
-    // Wait for first user interaction
-    const startAudio = () => {
-      audio.play().catch(e => {
-        console.warn('Audio autoplay was blocked:', e);
-      });
-      window.removeEventListener('click', startAudio);
-    };
-
-    window.addEventListener('click', startAudio);
-  });
-</script>
-
 </html>
