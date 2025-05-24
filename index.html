@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <audio id="background-audio" src="background.mp3" loop></audio>
+
   <div class="name-title">
     <p class="name">Zion Martincich</p>
     <p class="title">Programer / Graphics Arts</p>
@@ -45,7 +47,7 @@
     <div class="projects">
       <a href="Project1.html" class="project-card">
         <img src="IMG_4912.png" alt="Project 1" />
-        <p class="project-title">Project 1</p>
+        <p class="project-title">BEAKS PER MINUTE</p>
       </a>
       <a href="Project2.html" class="project-card">
         <img src="GTKIrI6WoAAodaG.jpg" alt="Project 2" />
@@ -67,4 +69,21 @@
     <P> - ZIONDAMAN - </P>
   </footer>
 </body>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('background-audio');
+
+    // Wait for first user interaction
+    const startAudio = () => {
+      audio.play().catch(e => {
+        console.warn('Audio autoplay was blocked:', e);
+      });
+      window.removeEventListener('click', startAudio);
+    };
+
+    window.addEventListener('click', startAudio);
+  });
+</script>
+
 </html>
