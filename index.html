@@ -75,6 +75,7 @@
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     const audio = document.getElementById('background-audio');
+    dio.volume = 0.3; // Set volume to 20%
     const startAudio = () => {
       audio.play().catch(e => {
         console.warn('Audio blocked:', e);
