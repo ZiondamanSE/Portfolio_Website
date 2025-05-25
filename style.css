@@ -133,8 +133,9 @@ body {
 /* Project Template CSS */
 .project-layout {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    justify-content: space-between;
+    align-items: flex-start; /* Align columns to top */
     padding: 50px 5%;
     gap: 40px;
     color: aliceblue;
@@ -142,11 +143,11 @@ body {
 }
 
 .column {
+    flex: 1;
+    max-width: 50%; /* Make sure each column is side by side */
     display: flex;
     flex-direction: column;
-    flex: 1 1 300px;
     gap: 20px;
-    max-width: 33%;
 }
 
 .block {
@@ -159,12 +160,13 @@ body {
 }
 
 .photo-block img {
-    width: 100%;
+    width: 70%;
     height: auto;
-    max-width: 700px;
-    max-height: 600px;
+    max-width: 100%;
     object-fit: cover;
-    display: inline-block;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .block-title {
@@ -183,4 +185,13 @@ body {
 .center-text {
     text-align: center;
     margin-top: 10px;
+}
+
+.block-text a {
+    text-decoration: underline;
+    color: aliceblue;
+}
+
+.block-text a:hover {
+    color: #90c4ff; /* soft blue on hover */
 }
