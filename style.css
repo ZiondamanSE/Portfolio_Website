@@ -133,6 +133,7 @@ body {
 /* Project Template CSS */
 .project-layout {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     padding: 50px 5%;
     gap: 40px;
@@ -143,8 +144,9 @@ body {
 .column {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    flex: 1 1 300px;
     gap: 20px;
+    max-width: 33%;
 }
 
 .block {
@@ -153,13 +155,16 @@ body {
 
 .photo-block {
     padding: 0;
+    text-align: center;
 }
 
 .photo-block img {
     width: 100%;
     height: auto;
-    display: block;
+    max-width: 700px;
+    max-height: 600px;
     object-fit: cover;
+    display: inline-block;
 }
 
 .block-title {
@@ -172,6 +177,7 @@ body {
 .block-text {
     font-size: 100%;
     color: aliceblue;
+    line-height: 1.6;
 }
 
 .center-text {
