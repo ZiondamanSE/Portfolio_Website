@@ -130,3 +130,51 @@ body {
     opacity: 0.4;
 }
 
+/* Project Template CSS */
+.project-layout {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 5%;
+    gap: 40px;
+    color: aliceblue;
+    font-family: 'AtkinsonMonoMedium', monospace;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 20px;
+}
+
+.block {
+    padding: 20px;
+}
+
+.photo-block {
+    padding: 0;
+}
+
+.photo-block img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.block-title {
+    font-size: 120%;
+    font-family: 'AtkinsonMonoSemiBold', monospace;
+    margin-bottom: 10px;
+    color: aliceblue;
+}
+
+.block-text {
+    font-size: 100%;
+    color: aliceblue;
+}
+
+.center-text {
+    text-align: center;
+    margin-top: 10px;
+}
