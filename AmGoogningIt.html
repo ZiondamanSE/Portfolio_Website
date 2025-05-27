@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Project 1</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .carousel-wrapper {
+            width: 70%;
+            max-width: 400px;
+            height: 250px;
+            perspective: 1000px;
+            cursor: pointer;
+            margin: 0 auto;
+        }
+
+        .carousel {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+        }
+
+        .carousel img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.6);
+        }
+    </style>
+</head>
+<body>
+    <img class="background-pixel" src="Background.gif" alt="" />
+
+    <div style="text-align:left; margin-top: 20px; font-family: SpecialElite;">
+        <a href="index.html" style="color:aliceblue; text-decoration:none;">← Back to home</a>
+    </div>
+
+    <div style="margin-top: 0px;" class="name-title">
+        <p style="margin-top: -30px;" class="name">Beaks Per Minute</p>
+        <p class="title">Programer / Debugger </p>
+    </div>
+
+    <div class="project-layout">
+        <div class="column">
+            <div class="photo-block">
+                <div class="carousel-wrapper" onclick="nextImage()">
+                    <div class="carousel" id="carousel">
+                        <img src="Banner for a.png" style="transform: rotateY(0deg) translateZ(500px);" />
+                        <img src="d043a090-7e75-4e45-aa8c-dfc1107ffe98.png" style="transform: rotateY(60deg) translateZ(500px);" />
+                        <img src="image3.png" style="transform: rotateY(120deg) translateZ(500px);" />
+                        <img src="image4.png" style="transform: rotateY(180deg) translateZ(500px);" />
+                        <img src="image5.png" style="transform: rotateY(240deg) translateZ(500px);" />
+                        <img src="image6.png" style="transform: rotateY(300deg) translateZ(500px);" />
+                    </div>
+                </div>
+            </div>
+            <p class="block-title center-text"> Preview (Click to rotate)</p>
+
+            <div style="margin-top: 0px;" class="block">
+                <p style="margin-top: 0px;" class="block-title">Reslult</p>
+                <p class="block-text">The end result of the whole project was a small game demo with one level and a tutorial level. There are some small bugs you might run into if you're really trying to break the game, but if you just play it casually, there’s no real way to break it.</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="block">
+                <p class="block-title">Origin Story</p>
+                <p class="block-text">During my education at LBS Norra, we had a game jam each term, and in 2025 I took part in the LBS Game Jam with a small team of two other game developers and three artists. Together, we developed a small rhythm game demo called “Beats Per Minut.” A rhythm game where you fight a boss while catching balls and avoiding bombs.</p>
+            </div>
+            <div class="block">
+                <p class="block-title">My Job</p>
+                <p class="block-text">My job was mainly bug hunting and fixing, but I also helped develop smaller systems. I spent most of my time with the team building things like the base for hit registration, a health system, and other small features. I also fixed bugs—especially the ones others didn’t have time to fix or couldn’t handle.</p>
+            </div>
+
+            <div class="block">
+                <p class="block-title">Links</p>
+                <ul class="block-text">
+                    <li><a href="https://drive.google.com/file/d/1J5hIIEq2_Gk3DN5zoA28jPMhaIGUdTfW/view" target="_blank" style="color: aliceblue;">Download Link</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let angle = 0;
+        function nextImage() {
+            angle -= 60;
+            document.getElementById('carousel').style.transform = `rotateY(${angle}deg)`;
+        }
+    </script>
+</body>
+</html>
