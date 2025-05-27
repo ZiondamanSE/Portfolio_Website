@@ -206,3 +206,21 @@ body {
 .block-text a:hover {
     color: #90c4ff; /* soft blue on hover */
 }
+
+/*404 site*/
+.gif-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.error-gif {
+  width: 200px;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.spacer {
+  width: 40px; /* adjust spacing between GIFs */
+}
