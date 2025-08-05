@@ -52,7 +52,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-top: 10px;
+    margin-top: -5px;
     font-size: 14px;
 }
 
@@ -70,26 +70,26 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 5% 10%; /* Increased side padding to move away from screen center */
-    gap: 100px; /* Increased spacing between About and Projects sections */
+    padding: 5% 10%;
+    gap: 100px;
 }
 
 .about {
     width: 40%;
     font-family: 'AtkinsonMonoMedium', monospace;
     color: aliceblue;
-    margin-top: -30px; /* This moves the whole about section upward */
+    margin-top: -30px;
 }
 
 .section-title {
     font-size: 150%;
-    margin: 0 0 10px 0; /* Remove default top margin */
+    margin: 0 0 0px 0;
     font-weight: 500;
 }
 
 .section-text {
     font-size: 100%;
-    margin: 0 0 20px 0; /* Remove default top margin */
+    margin: 0 0 20px 0;
     font-weight: 400;
 }
 
@@ -99,12 +99,11 @@ body {
     color: aliceblue;
 }
 
-
 .projects {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px; /* Slightly larger spacing between project cards */
-    width: 55%; /* Optional: narrow to balance new .about width */
+    gap: 30px;
+    width: 55%;
 }
 
 .project-card {
@@ -144,9 +143,9 @@ body {
 /* Project Template CSS */
 .project-layout {
     display: flex;
-    flex-wrap: nowrap; /* Prevent wrapping */
+    flex-wrap: nowrap;
     justify-content: space-between;
-    align-items: flex-start; /* Align columns to top */
+    align-items: flex-start;
     padding: 50px 5%;
     gap: 40px;
     color: aliceblue;
@@ -155,7 +154,7 @@ body {
 
 .column {
     flex: 1;
-    max-width: 50%; /* Make sure each column is side by side */
+    max-width: 50%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -204,125 +203,141 @@ body {
 }
 
 .block-text a:hover {
-    color: #90c4ff; /* soft blue on hover */
+    color: #90c4ff;
 }
 
 /*404 site*/
 .gif-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
 }
 
 .error-gif {
-  width: 200px;
-  height: auto;
-  image-rendering: pixelated;
+    width: 200px;
+    height: auto;
+    image-rendering: pixelated;
 }
 
 .spacer {
-  width: 40px; /* adjust spacing between GIFs */
+    width: 40px;
 }
 
 /* ====== Global Reset ====== */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* ====== Body & Background ====== */
 body {
-  background-size: cover;
-  image-rendering: pixelated;
-  font-family: 'AtkinsonMonoMedium', monospace;
-  color: aliceblue;
-}
-.background-pixel {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  image-rendering: pixelated;
-  z-index: -1;
+    background-size: cover;
+    image-rendering: pixelated;
+    font-family: 'AtkinsonMonoMedium', monospace;
+    color: aliceblue;
 }
 
-/* ====== Header ====== */
-.name-title .name {
-  font-family: 'AtkinsonMonoSemiBold', monospace;
-  font-size: 3em;
-  text-align: center;
-  margin-top: 5%;
+.background-pixel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: pixelated;
+    z-index: -1;
 }
+
+
+.name202 {
+    font-family: 'SpecialElite', monospace;
+    font-size: 300%;
+    color: aliceblue;
+    margin: 5% 0 0 0;
+    text-align: center;
+}
+
+
 .name-title .title {
-  font-size: 1.5em;
-  text-align: center;
-  margin-bottom: 2%;
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 0.5em;
 }
 
 /* ====== Sheet Wrapper ====== */
 .sheet-wrapper {
-  max-width: 90%;
-  margin: 50px auto;
-  overflow-x: auto;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.7);
+    max-width: 90%;
+    margin: 50px auto;
+    overflow-x: auto;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
 }
 
 /* ====== Table Styling ====== */
 #sheet-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;   /* enforce fixed widths below */
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
 }
 
-/* define approximate column widths */
 #sheet-table th:nth-child(1),
-#sheet-table td:nth-child(1) { width: 10%; }  /* Rating */
+#sheet-table td:nth-child(1) {
+    width: 10%;
+}
+
 #sheet-table th:nth-child(2),
-#sheet-table td:nth-child(2) { width: 15%; }  /* Artist */
+#sheet-table td:nth-child(2) {
+    width: 15%;
+}
+
 #sheet-table th:nth-child(3),
-#sheet-table td:nth-child(3) { width: 20%; }  /* Album */
+#sheet-table td:nth-child(3) {
+    width: 20%;
+}
+
 #sheet-table th:nth-child(4),
-#sheet-table td:nth-child(4) { width: 40%; }  /* Best track */
+#sheet-table td:nth-child(4) {
+    width: 40%;
+}
+
 #sheet-table th:nth-child(5),
-#sheet-table td:nth-child(5) { width: 15%; }  /* Worst track */
+#sheet-table td:nth-child(5) {
+    width: 15%;
+}
 
 #sheet-table th,
 #sheet-table td {
-  border: 1px solid rgba(255,255,255,0.2);
-  padding: 8px 12px;
-  text-align: left;
-
-  /* wrapping long text */
-  white-space: normal;
-  word-break: break-word;
-  overflow-wrap: anywhere;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 12px;
+    text-align: left;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
 #sheet-table thead th {
-  background: rgba(255,255,255,0.1);
-  font-weight: 500;
+    background: rgba(255, 255, 255, 0.1);
+    font-weight: 500;
 }
 
 #sheet-table tbody tr:nth-child(odd) {
-  background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
 }
 
-/* just highlight the row, no scaling */
 #sheet-table tbody tr:hover {
-  background: rgba(255,255,255,0.15);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 /* ====== Footer ====== */
 .site-footer {
-  font-family: 'SpecialElite', monospace;
-  font-size: 0.5625em; /* ~9px */
-  color: rgba(190, 190, 190, 0.4);
-  text-align: center;
-  padding: 0.5em 0;
+    font-family: 'SpecialElite', monospace;
+    font-size: 0.5625em;
+    color: rgba(190, 190, 190, 0.4);
+    text-align: center;
+    padding: 0.5em 0;
 }
