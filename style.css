@@ -224,3 +224,44 @@ body {
 .spacer {
   width: 40px; /* adjust spacing between GIFs */
 }
+
+/* sheet.html specific styles */
+.sheet-wrapper {
+  max-width: 90%;
+  margin: 50px auto;
+  overflow-x: auto;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.7);
+  font-family: 'AtkinsonMonoMedium', monospace;
+}
+
+#sheet-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#sheet-table th,
+#sheet-table td {
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 8px 12px;
+  text-align: left;
+  color: aliceblue;
+}
+
+#sheet-table thead th {
+  background: rgba(255,255,255,0.1);
+  font-weight: 500;
+}
+
+#sheet-table tbody tr:nth-child(odd) {
+  background: rgba(255,255,255,0.05);
+}
+
+#sheet-table tbody tr:hover {
+  background: rgba(255,255,255,0.15);
+  transform: scale(1.01);
+  transition: transform 0.1s ease;
+}
