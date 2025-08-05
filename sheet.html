@@ -7,7 +7,7 @@
     content="width=device-width, initial-scale=1.0"
   />
   <title>Live Sheet</title>
-  <!-- reuse your font-face declarations -->
+  <!-- your existing styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -18,7 +18,7 @@
     alt=""
   />
 
-  <!-- header to match your homepage style -->
+  <!-- header -->
   <div class="name-title">
     <p class="name">Live Data</p>
     <p class="title">Updated in Real-Time</p>
@@ -27,12 +27,8 @@
   <!-- sheet container -->
   <div class="sheet-wrapper">
     <table id="sheet-table">
-      <thead>
-        <!-- filled in by JS -->
-      </thead>
-      <tbody>
-        <!-- filled in by JS -->
-      </tbody>
+      <thead></thead>
+      <tbody></tbody>
     </table>
   </div>
 
@@ -41,52 +37,53 @@
     <p> - ZIONDAMAN - </p>
   </footer>
 
+  <!-- 1) Tabletop.js for JSONP loading -->
+  <script src="https://cdn.jsdelivr.net/npm/tabletop@1.6.0/dist/tabletop.min.js"></script>
   <script>
-  // ——— CONFIGURE THIS ———
-  const SHEET_ID = '2PACX-1vTWj12eeHUgAAnIlaAMfALgxn7DdmGch_8wVZI9Sxahaudc5wv96Srbxs45oFYhtOAIJy87EbrIjS_F';
-  const SHEET_GID = '0';
+    // ——— CONFIGURE: your "Publish to web" CSV URL ———
+    // (File → Publish to web → Link → CSV of your sheet)
+    const PUBLIC_CSV =
+      'https://docs.google.com/spreadsheets/d/e/2PACX-1vTWj12eeHUgAAnIlaAMfALgxn7DdmGch_8wVZI9Sxahaudc5wv96Srbxs45oFYhtOAIJy87EbrIjS_F/pub?gid=0&single=true&output=csv';
 
-  // this will be called with the sheet data
-  function handleSheet(json) {
-    const cols = json.table.cols.map(c => c.label || c.id);
-    const rows = json.table.rows;
-
-    // header
-    const thead = document.querySelector('#sheet-table thead');
-    const headerRow = document.createElement('tr');
-    cols.forEach(text => {
-      const th = document.createElement('th');
-      th.textContent = text;
-      headerRow.appendChild(th);
-    });
-    thead.appendChild(headerRow);
-
-    // body (skip empty rows)
-    const tbody = document.querySelector('#sheet-table tbody');
-    rows.forEach(r => {
-      const hasData = r.c.some(c => c && c.v != null && c.v.toString().trim() !== '');
-      if (!hasData) return;
-      const tr = document.createElement('tr');
-      r.c.forEach(c => {
-        const td = document.createElement('td');
-        td.textContent = (c && c.v != null) ? c.v : '';
-        tr.appendChild(td);
+    window.addEventListener('DOMContentLoaded', () => {
+      Tabletop.init({
+        key:      PUBLIC_CSV,
+        callback: onData,
+        simpleSheet: false
       });
-      tbody.appendChild(tr);
     });
-  }
 
-  window.addEventListener('DOMContentLoaded', () => {
-    const url =
-      `https://docs.google.com/spreadsheets/d/e/${SHEET_ID}/gviz/tq` +
-      `?gid=${SHEET_GID}` +
-      `&tqx=out:json;responseHandler:handleSheet`;
-    const s = document.createElement('script');
-    s.src = url;
-    document.body.appendChild(s);
-  });
-</script>
+    function onData(data, tabletop) {
+      // data is an object of sheets; we want the first one:
+      const sheetName = Object.keys(data)[0];
+      const rows = data[sheetName];
 
-  
+      // build header row from keys of first object
+      const thead = document.querySelector('#sheet-table thead');
+      const headerRow = document.createElement('tr');
+      Object.keys(rows[0]).forEach(col => {
+        const th = document.createElement('th');
+        th.textContent = col;
+        headerRow.appendChild(th);
+      });
+      thead.appendChild(headerRow);
+
+      // build body, filtering empty rows
+      const tbody = document.querySelector('#sheet-table tbody');
+      rows.forEach(row => {
+        // check if any value in this row is non-empty
+        const hasData = Object.values(row).some(v => v.toString().trim() !== '');
+        if (!hasData) return;
+
+        const tr = document.createElement('tr');
+        Object.values(row).forEach(cell => {
+          const td = document.createElement('td');
+          td.textContent = cell;
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+    }
+  </script>
 </body>
 </html>
