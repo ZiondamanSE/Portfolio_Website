@@ -1,15 +1,228 @@
-/* ====== Font Faces ====== */
 @font-face {
-  font-family: 'AtkinsonMonoSemiBold';
-  src: url('AtkinsonHyperlegibleMono-SemiBold.ttf') format('truetype');
+    font-family: 'AtkinsonMonoSemiBold';
+    src: url('AtkinsonHyperlegibleMono-SemiBold.ttf') format('truetype');
 }
+
 @font-face {
-  font-family: 'AtkinsonMonoMedium';
-  src: url('AtkinsonHyperlegibleMono-Medium.ttf') format('truetype');
+    font-family: 'AtkinsonMonoMedium';
+    src: url('AtkinsonHyperlegibleMono-Medium.ttf') format('truetype');
 }
+
 @font-face {
-  font-family: 'SpecialElite';
-  src: url('SpecialElite-Regular.ttf') format('truetype');
+    font-family: 'SpecialElite';
+    src: url('SpecialElite-Regular.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    image-rendering: pixelated;
+}
+
+.background-pixel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: pixelated;
+    z-index: -1;
+}
+
+.name {
+    font-family: 'AtkinsonMonoSemiBold', monospace;
+    font-size: 300%;
+    color: aliceblue;
+    margin: 5% 0 0 0;
+    text-align: center;
+}
+
+.title {
+    font-family: 'AtkinsonMonoMedium', monospace;
+    font-size: 150%;
+    color: aliceblue;
+    margin: 0;
+    text-align: center;
+}
+
+.social-icons {
+    font-family: 'SpecialElite', monospace;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.social-icons a {
+    color: aliceblue;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 5% 10%; /* Increased side padding to move away from screen center */
+    gap: 100px; /* Increased spacing between About and Projects sections */
+}
+
+.about {
+    width: 40%;
+    font-family: 'AtkinsonMonoMedium', monospace;
+    color: aliceblue;
+    margin-top: -30px; /* This moves the whole about section upward */
+}
+
+.section-title {
+    font-size: 150%;
+    margin: 0 0 10px 0; /* Remove default top margin */
+    font-weight: 500;
+}
+
+.section-text {
+    font-size: 100%;
+    margin: 0 0 20px 0; /* Remove default top margin */
+    font-weight: 400;
+}
+
+.skills-list {
+    list-style: square;
+    padding-left: 20px;
+    color: aliceblue;
+}
+
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px; /* Slightly larger spacing between project cards */
+    width: 55%; /* Optional: narrow to balance new .about width */
+}
+
+.project-card {
+    text-decoration: none;
+    color: aliceblue;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-card img {
+    border-radius: 12px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.project-title {
+    margin-top: 10px;
+    font-family: 'AtkinsonMonoSemiBold', monospace;
+    font-size: 120%;
+}
+
+.site-footer {
+    font-family: 'SpecialElite', monospace;
+    font-size: 9px;
+    color: rgb(190, 190, 190);
+    text-align: center;
+    padding: 2px 0;
+    opacity: 0.4;
+}
+
+/* Project Template CSS */
+.project-layout {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    justify-content: space-between;
+    align-items: flex-start; /* Align columns to top */
+    padding: 50px 5%;
+    gap: 40px;
+    color: aliceblue;
+    font-family: 'AtkinsonMonoMedium', monospace;
+}
+
+.column {
+    flex: 1;
+    max-width: 50%; /* Make sure each column is side by side */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.block {
+    padding: 20px;
+}
+
+.photo-block {
+    padding: 0;
+    text-align: center;
+}
+
+.photo-block img {
+    width: 70%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.block-title {
+    font-size: 120%;
+    font-family: 'AtkinsonMonoSemiBold', monospace;
+    margin-bottom: 10px;
+    color: aliceblue;
+}
+
+.block-text {
+    font-size: 100%;
+    color: aliceblue;
+    line-height: 1.6;
+}
+
+.center-text {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.block-text a {
+    text-decoration: underline;
+    color: aliceblue;
+}
+
+.block-text a:hover {
+    color: #90c4ff; /* soft blue on hover */
+}
+
+/*404 site*/
+.gif-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.error-gif {
+  width: 200px;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.spacer {
+  width: 40px; /* adjust spacing between GIFs */
 }
 
 /* ====== Global Reset ====== */
