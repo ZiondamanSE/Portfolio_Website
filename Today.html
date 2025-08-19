@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>University Schedule</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <img class="background-pixel" src="Monkeybreath.gif" alt="" />
+
+  <div class="name-title">
+    <p class="name">UNIVERSITY SCHEDULE</p>
+    <p class="title">Högskolan i Skövde - DVSUG25h</p>
+  </div>
+
+  <!-- LOGIN OVERLAY -->
+  <div id="login-overlay" class="login-overlay">
+    <div class="login-box">
+      <h2>Enter Password</h2>
+      <input id="password-input" type="password" placeholder="Password" autocomplete="off" />
+      <button id="login-btn">Login</button>
+      <p id="login-error" class="login-error">Incorrect password</p>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div id="schedule-container" class="schedule-container">
+    <div class="controls">
+      <div>
+        <button id="refresh-btn">Refresh Schedule</button>
+        <button id="today-btn">Go to Today</button>
+      </div>
+      <div>
+        <button id="expand-all-btn">Expand All</button>
+        <button id="collapse-all-btn">Collapse All</button>
+      </div>
+    </div>
+
+    <div id="schedule-grid" class="schedule-grid">
+      <!-- Schedule will be populated here -->
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>UNIVERSITY SCHEDULE VIEWER</p>
+    <p>Data from TimeEdit System</p>
+  </footer>
+
+<script>
+// Configuration
+const CSV_FILENAME = 'TimeEdit_81406252_81402252_81404252_81405252_DVSUG25h__DVSUG25h_Aktivitet_2025-08-17_19_39.csv';
+const CORRECT_PASSWORD = 'zion20';
+
+// Elements
+const loginOverlay = document.getElementById('login-overlay');
+const passwordInput = document.getElementById('password-input');
+const loginBtn = document.getElementById('login-btn');
+const loginError = document.getElementById('login-error');
+const scheduleContainer = document.getElementById('schedule-container');
+const scheduleGrid = document.getElementById('schedule-grid');
+const refreshBtn = document.getElementById('refresh-btn');
+const todayBtn = document.getElementById('today-btn');
+const expandAllBtn = document.getElementById('expand-all-btn');
+const collapseAllBtn = document.getElementById('collapse-all-btn');
+
+let scheduleData = [];
+
+// CSV Parser
+function parseCSV(text) {
+  const rows = [];
+  let current = '';
+  let row = [];
+  let inQuotes = false;
+  
+  for (let i = 0; i < text.length; i++) {
+    const char = text[i];
+    const next = text[i + 1];
+    
+    if (char === '"') {
+      if (inQuotes && next === '"') {
+        current += '"';
+        i++;
+      } else {
+        inQuotes = !inQuotes;
+      }
+      continue;
+    }
+    
+    if (char === ',' && !inQuotes) {
+      row.push(current);
+      current = '';
+      continue;
+    }
+    
+    if ((char === '\n' || char === '\r') && !inQuotes) {
+      if (char === '\r' && next === '\n') i++;
+      row.push(current);
+      if (!row.every(v => v === '')) {
+        rows.push(row);
+      }
+      row = [];
+      current = '';
+      continue;
+    }
+    
+    current += char;
+  }
+  
+  if (current !== '' || row.length) {
+    row.push(current);
+    rows.push(row);
+  }
+  
+  return rows;
+}
+
+// Date utilities
+function parseDate(dateStr) {
+  if (!dateStr) return null;
+  const cleaned = dateStr.trim();
+  if (/^\d{4}-\d{2}-\d{2}$/.test(cleaned)) {
+    return new Date(cleaned + 'T00:00:00');
+  }
+  const date = new Date(cleaned);
+  return isNaN(date.getTime()) ? null : date;
+}
+
+function formatDate(date) {
+  if (!date) return '';
+  return date.toLocaleDateString('sv-SE', { 
+    weekday: 'long', 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  });
+}
+
+function isToday(date) {
+  if (!date) return false;
+  const today = new Date();
+  return date.getDate() === today.getDate() &&
+         date.getMonth() === today.getMonth() &&
+         date.getFullYear() === today.getFullYear();
+}
+
+function isPast(date) {
+  if (!date) return false;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const compareDate = new Date(date);
+  compareDate.setHours(0, 0, 0, 0);
+  return compareDate < today;
+}
+
+// Load and parse CSV
+async function loadSchedule() {
+  try {
+    const response = await fetch(CSV_FILENAME);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const csvText = await response.text();
+    const rows = parseCSV(csvText);
+    
+    // Find header row
+    let headerIndex = -1;
+    for (let i = 0; i < rows.length; i++) {
+      if (rows[i].some(cell => cell && cell.toLowerCase().includes('startdatum'))) {
+        headerIndex = i;
+        break;
+      }
+    }
+    
+    if (headerIndex === -1) {
+      throw new Error('No header row found');
+    }
+    
+    const headers = rows[headerIndex];
+    const dataRows = rows.slice(headerIndex + 1);
+    
+    scheduleData = dataRows.map(row => {
+      const event = {};
+      headers.forEach((header, index) => {
+        event[header.toLowerCase().trim()] = row[index] || '';
+      });
+      return event;
+    }).filter(event => {
+      // Filter out empty rows and non-DVSUG25h events
+      return event.startdatum && (
+        !event.program || 
+        event.program.includes('DVSUG25h') ||
+        event.grupp === 'DVSUG25h'
+      );
+    });
+    
+    renderSchedule();
+    
+  } catch (error) {
+    console.error('Error loading schedule:', error);
+    scheduleGrid.innerHTML = `
+      <div class="no-events">
+        <p>Error loading schedule: ${error.message}</p>
+        <p>Make sure the CSV file is in the same directory as this HTML file.</p>
+      </div>
+    `;
+  }
+}
+
+// Render schedule
+function renderSchedule() {
+  scheduleGrid.innerHTML = '';
+  
+  if (scheduleData.length === 0) {
+    scheduleGrid.innerHTML = '<div class="no-events">No events found</div>';
+    return;
+  }
+  
+  // Group events by date
+  const eventsByDate = {};
+  scheduleData.forEach(event => {
+    const date = parseDate(event.startdatum);
+    if (date) {
+      const dateKey = date.toISOString().split('T')[0];
+      if (!eventsByDate[dateKey]) {
+        eventsByDate[dateKey] = [];
+      }
+      eventsByDate[dateKey].push(event);
+    }
+  });
+  
+  // Sort dates
+  const sortedDates = Object.keys(eventsByDate).sort();
+  
+  // Render each day
+  sortedDates.forEach(dateKey => {
+    const date = new Date(dateKey + 'T00:00:00');
+    const daySection = document.createElement('div');
+    daySection.className = 'day-section';
+    daySection.id = `day-${dateKey}`;
+    
+    const dayHeader = document.createElement('div');
+    dayHeader.className = 'day-header';
+    dayHeader.textContent = formatDate(date);
+    daySection.appendChild(dayHeader);
+    
+    // Sort events by time
+    const dayEvents = eventsByDate[dateKey].sort((a, b) => {
+      const timeA = a.starttid || '';
+      const timeB = b.starttid || '';
+      return timeA.localeCompare(timeB);
+    });
+    
+    dayEvents.forEach(event => {
+      const eventEl = createEventElement(event, date);
+      daySection.appendChild(eventEl);
+    });
+    
+    scheduleGrid.appendChild(daySection);
+  });
+}
+
+// Create event element
+function createEventElement(event, date) {
+  const eventEl = document.createElement('div');
+  eventEl.className = 'event';
+  
+  if (isToday(date)) {
+    eventEl.classList.add('today');
+  } else if (isPast(date)) {
+    eventEl.classList.add('past');
+  }
+  
+  const timeStr = event.starttid && event.sluttid 
+    ? `${event.starttid} - ${event.sluttid}`
+    : event.starttid || '';
+  
+  const title = event.kursbenämning || event['undervisning/aktivitet,tentamenstyp'] || 'No title';
+  const location = event.lokal || 'No location specified';
+  const teacher = event.lärare || '';
+  const comment = event.kommentar || '';
+  const activityType = event['undervisning/aktivitet,tentamenstyp'] || '';
+  
+  eventEl.innerHTML = `
+    <div class="event-time">${timeStr}</div>
+    <div class="event-title">${title}</div>
+    <div class="event-location">📍 ${location}</div>
+    <div class="event-details" style="display: none;">
+      ${teacher ? `<div><strong>Teacher:</strong> ${teacher}</div>` : ''}
+      ${activityType ? `<div><strong>Type:</strong> ${activityType}</div>` : ''}
+      ${event.grupp ? `<div><strong>Group:</strong> ${event.grupp}</div>` : ''}
+      ${comment ? `<div><strong>Comment:</strong> ${comment}</div>` : ''}
+    </div>
+  `;
+  
+  // Toggle details on click
+  eventEl.addEventListener('click', () => {
+    const details = eventEl.querySelector('.event-details');
+    if (details.style.display === 'none') {
+      details.style.display = 'block';
+      eventEl.classList.add('event-expanded');
+    } else {
+      details.style.display = 'none';
+      eventEl.classList.remove('event-expanded');
+    }
+  });
+  
+  return eventEl;
+}
+
+// Event listeners
+loginBtn.addEventListener('click', () => {
+  const password = passwordInput.value.trim();
+  if (password === CORRECT_PASSWORD) {
+    loginOverlay.style.display = 'none';
+    scheduleContainer.style.display = 'block';
+    loadSchedule();
+    loginError.style.display = 'none';
+  } else {
+    loginError.style.display = 'block';
+  }
+  passwordInput.value = '';
+});
+
+passwordInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    loginBtn.click();
+  }
+});
+
+refreshBtn.addEventListener('click', loadSchedule);
+
+todayBtn.addEventListener('click', () => {
+  const today = new Date().toISOString().split('T')[0];
+  const todaySection = document.getElementById(`day-${today}`);
+  if (todaySection) {
+    todaySection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+});
+
+expandAllBtn.addEventListener('click', () => {
+  document.querySelectorAll('.event-details').forEach(details => {
+    details.style.display = 'block';
+  });
+  document.querySelectorAll('.event').forEach(event => {
+    event.classList.add('event-expanded');
+  });
+});
+
+collapseAllBtn.addEventListener('click', () => {
+  document.querySelectorAll('.event-details').forEach(details => {
+    details.style.display = 'none';
+  });
+  document.querySelectorAll('.event').forEach(event => {
+    event.classList.remove('event-expanded');
+  });
+});
+
+// Initialize
+passwordInput.focus();
+</script>
+</body>
+</html>

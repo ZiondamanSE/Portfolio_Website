@@ -20,17 +20,6 @@ body {
     image-rendering: pixelated;
 }
 
-.background-pixel {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    image-rendering: pixelated;
-    z-index: -1;
-}
-
 .name {
     font-family: 'AtkinsonMonoSemiBold', monospace;
     font-size: 300%;
@@ -341,3 +330,342 @@ body {
     text-align: center;
     padding: 0.5em 0;
 }
+
+/* -----------------------
+   ADDITIONS FOR LOGIN + HIGHLIGHTING + BETTER TABLE READABILITY
+   (Only appended; no original rules modified.)
+   ----------------------- */
+
+/* login overlay */
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.7);
+  z-index: 9999;
+  padding: 20px;
+}
+
+.login-box {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 28px;
+  border-radius: 10px;
+  min-width: 320px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  font-family: 'AtkinsonMonoMedium', monospace;
+  color: aliceblue;
+}
+
+.login-box h2 {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  font-family: 'AtkinsonMonoSemiBold', monospace;
+}
+
+.login-box input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.02);
+  color: aliceblue;
+  font-family: 'AtkinsonMonoMedium', monospace;
+  outline: none;
+}
+
+.login-box button {
+  margin-top: 8px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.06);
+  color: aliceblue;
+  border: 1px solid rgba(255,255,255,0.12);
+  cursor: pointer;
+  font-family: 'AtkinsonMonoMedium', monospace;
+}
+
+/* highlighted "today" row */
+#sheet-table tr.today-row {
+  background: rgba(144,196,255,0.08) !important;
+  box-shadow: inset 0 0 0 1px rgba(144,196,255,0.06);
+}
+#sheet-table tr.today-row td {
+  font-weight: 700;
+}
+
+/* past dates greyed and crossed out */
+#sheet-table tr.past-row {
+  color: rgba(200,200,200,0.6);
+  opacity: 0.7;
+}
+#sheet-table tr.past-row td {
+  text-decoration: line-through;
+  color: rgba(170,170,170,0.6);
+}
+
+/* improve table wrap for long text (classrooms, course names, tutors, comments) */
+#sheet-table td, #sheet-table th {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* responsive tweaks for login on small screens */
+@media (max-width: 420px) {
+  .login-box {
+    min-width: 90%;
+    padding: 18px;
+  }
+}
+
+/* ---- appended: table layout + login/highlighting tweaks ---- */
+
+/* allow columns to size to their content so long cells (course, comments) show */
+#sheet-table {
+  table-layout: auto !important;
+}
+
+/* ensure long cells wrap */
+#sheet-table td, #sheet-table th {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* login overlay + row highlighting (if not already present) */
+.login-overlay { position: fixed; inset: 0; display:flex; align-items:center; justify-content:center; background: rgba(0,0,0,0.7); z-index:9999; padding:20px; }
+.login-box { background: rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.12); padding:28px; border-radius:10px; min-width:320px; text-align:center; box-shadow:0 8px 30px rgba(0,0,0,0.6); font-family:'AtkinsonMonoMedium',monospace; color:aliceblue; }
+
+#sheet-table tr.today-row { background: rgba(144,196,255,0.08) !important; box-shadow: inset 0 0 0 1px rgba(144,196,255,0.06); }
+#sheet-table tr.today-row td { font-weight:700; }
+#sheet-table tr.past-row { color: rgba(200,200,200,0.6); opacity:0.7; }
+#sheet-table tr.past-row td { text-decoration: line-through; color: rgba(170,170,170,0.6); }
+
+/* ===== SCHEDULE VIEWER SPECIFIC STYLES ===== */
+
+/* Schedule container */
+.schedule-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: none;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(173, 216, 230, 0.2);
+}
+
+.controls button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    background: rgba(173, 216, 230, 0.1);
+    color: aliceblue;
+    border: 1px solid rgba(173, 216, 230, 0.3);
+    cursor: pointer;
+    font-family: 'AtkinsonMonoMedium', monospace;
+    transition: all 0.3s ease;
+}
+
+.controls button:hover {
+    background: rgba(173, 216, 230, 0.2);
+    border-color: rgba(173, 216, 230, 0.5);
+}
+
+/* Schedule grid */
+.schedule-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.day-section {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(173, 216, 230, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    backdrop-filter: blur(5px);
+}
+
+.day-header {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #90c4ff;
+    text-transform: capitalize;
+    border-bottom: 2px solid rgba(173, 216, 230, 0.2);
+    padding-bottom: 0.5rem;
+    font-family: 'AtkinsonMonoSemiBold', monospace;
+}
+
+.event {
+    background: rgba(173, 216, 230, 0.05);
+    border: 1px solid rgba(173, 216, 230, 0.15);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.event:hover {
+    background: rgba(173, 216, 230, 0.1);
+    border-color: rgba(173, 216, 230, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.event.today {
+    background: rgba(144, 196, 255, 0.15);
+    border-color: rgba(144, 196, 255, 0.4);
+    box-shadow: 0 0 0 2px rgba(144, 196, 255, 0.2);
+}
+
+.event.past {
+    opacity: 0.6;
+    filter: grayscale(0.3);
+}
+
+.event-time {
+    font-weight: bold;
+    color: #90c4ff;
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+    font-family: 'AtkinsonMonoSemiBold', monospace;
+}
+
+.event-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+    color: aliceblue;
+    font-family: 'AtkinsonMonoMedium', monospace;
+}
+
+.event-location {
+    font-size: 0.9rem;
+    color: rgba(173, 216, 230, 0.8);
+    margin-bottom: 0.4rem;
+    font-family: 'AtkinsonMonoMedium', monospace;
+}
+
+.event-details {
+    font-size: 0.85rem;
+    color: rgba(173, 216, 230, 0.7);
+    line-height: 1.4;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(173, 216, 230, 0.2);
+    font-family: 'AtkinsonMonoMedium', monospace;
+}
+
+.event-details strong {
+    color: aliceblue;
+}
+
+.event-expanded {
+    max-height: none;
+    overflow: visible;
+}
+
+.no-events {
+    text-align: center;
+    color: rgba(173, 216, 230, 0.6);
+    font-style: italic;
+    padding: 3rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    border: 1px dashed rgba(173, 216, 230, 0.3);
+}
+
+/* Login error styling */
+.login-error {
+    color: #ff6b6b;
+    margin-top: 1rem;
+    display: none;
+    font-size: 0.9rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .schedule-container {
+        padding: 1rem;
+    }
+    
+    .name {
+        font-size: 200%;
+    }
+    
+    .login-box {
+        min-width: 90%;
+        padding: 1.5rem;
+    }
+    
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .controls > div {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+    
+    .day-section {
+        padding: 1rem;
+    }
+    
+    .day-header {
+        font-size: 1.2rem;
+    }
+    
+    .event {
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .controls button {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+    
+    .event-time {
+        font-size: 0.85rem;
+    }
+    
+    .event-title {
+        font-size: 1rem;
+    }
+    
+    .event-location,
+    .event-details {
+        font-size: 0.8rem;
+    }
+}
+
+.Monkeybreath-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("./Monkeybreath.gif") center center / cover no-repeat;
+  z-index: -1;
+  pointer-events: none; /* prevents it from blocking clicks */
+}
+body {
+  background: transparent;
+}
+

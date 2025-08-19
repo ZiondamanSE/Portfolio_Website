@@ -1,0 +1,77 @@
+
+TimeEdit,Högskolan i Skövde
+"81406252,81402252,81404252,81405252,DVSUG25h + DVSUG25h,Aktivitet",2025-08-17 - 2025-11-02,Schema för valda kurser och program.
+Startdatum,Starttid,Slutdatum,Sluttid,Lokal,Kursbenämning,Grupp,Program,Lärare,"Undervisning/aktivitet,Tentamenstyp",Kommentar 
+2025-08-26,12:00,2025-08-26,13:00,,,,"DSLPG23h,DSLPG24h,DSLPG25h,DSMPG23h,DSMPG24h,DSMPG25h,DSPDG23h,DSPDG24h,DSPDG25h,DSPPG23h,DSPPG24h,DSPPG25h,DVSUG23h,DVSUG24h,DVSUG25h,ITBIG23h,ITBIG24H,ITBIG25h,NSARG23h,NSARG24h,NSARG25h,SYVEG23h,SYVEG24h,SYVEG25h,UXDPG23h,UXDPG24h,UXDPG25h,WEBUG23h","Anneli Ottosson,Maria Cederlund","Zoom,Webbinarium",Balanserat studentliv  https://his-se.zoom.us/j/66345124778
+2025-09-01,09:30,2025-09-01,10:00,,,,DVSUG25h,,Intro,Välkomnande på Högskolans campus
+2025-09-01,10:15,2025-09-01,12:00,A201,,,DVSUG25h,András Márki,Programstart,
+2025-09-01,13:15,2025-09-01,16:00,,,,DVSUG25h,,Intro,"Introaktivitet, campusvandring m.m."
+2025-09-02,13:15,2025-09-02,15:00,D105,"Datorns grunder G1N, 7.5hp",,"CNAPG25h,DVSUG25h,NSARG25h",Johan Zaxmy,"Föreläsning,Introduktion",
+2025-09-02,15:15,2025-09-02,17:00,D107,"Grundläggande programmering med C++ G1N, 7.5hp","1,2,3,4","DVSUG25h,NSARG25h",Christian Lennerholt,Föreläsning,F1
+2025-09-03,11:00,2025-09-03,13:00,,,,DVSUG25h,,Intro,Studentmässa i hus G
+2025-09-03,13:15,2025-09-03,15:00,D105,"Datorns grunder G1N, 7.5hp",,"CNAPG25h,DVSUG25h,NSARG25h",Jonas Ingemarsson,Föreläsning,Computer hardware
+2025-09-04,15:15,2025-09-04,17:00,"D204,D205","Datorns grunder G1N, 7.5hp",C,DVSUG25h,"Gäst,Johan Zaxmy,Jonas Ingemarsson,Thomas Fischer",Handledning,Computer inventory lab
+2025-09-05,08:15,2025-09-05,10:00,"D204,D205","Datorns grunder G1N, 7.5hp",D,"CNAPG25h,DVSUG25h","Gäst,Johan Zaxmy,Jonas Ingemarsson,Thomas Fischer",Handledning,Computer inventory lab
+2025-09-05,13:15,2025-09-05,14:00,A201,,,DVSUG25h,András Márki,Föreläsning,Akademisk traditionsföreläsning
+2025-09-05,14:00,2025-09-05,16:00,,,,DVSUG25h,,Intro,Introaktivitet och Studentkårens aktivitet i Boulogner
+2025-09-08,13:15,2025-09-08,15:00,D105,"Grundläggande programmering med C++ G1N, 7.5hp","1,2,3,4","DVSUG25h,NSARG25h",Christian Lennerholt,Föreläsning,F2
+2025-09-08,15:15,2025-09-08,16:00,,,,"DSLPG23h,DSLPG24h,DSLPG25h,DSMPG23h,DSMPG24h,DSMPG25h,DSPDG23h,DSPDG24h,DSPDG25h,DSPPG23h,DSPPG24h,DSPPG25h,DVSUG23h,DVSUG24h,DVSUG25h,ITBIG23h,ITBIG24H,ITBIG25h,NSARG23h,NSARG24h,NSARG25h,SYVEG23h,SYVEG24h,SYVEG25h,UXDPG23h,UXDPG24h,UXDPG25h,WEBUG23h","Ingrid Christensson,Ulrika Granlid","Zoom,Webbinarium",Akademiska ramar  https://his-se.zoom.us/j/61304094831
+2025-09-09,10:15,2025-09-09,12:00,D105,"Datorns grunder G1N, 7.5hp",,"CNAPG25h,DVSUG25h,NSARG25h",Johan Zaxmy,Föreläsning,Linux 1
+2025-09-09,13:15,2025-09-09,15:00,D105,"Grundläggande programmering med C++ G1N, 7.5hp","1,2,3,4","DVSUG25h,NSARG25h",Christian Lennerholt,Föreläsning,F3
+2025-09-10,13:15,2025-09-10,15:00,D105,"Datorns grunder G1N, 7.5hp",,"CNAPG25h,DVSUG25h,NSARG25h",Johan Zaxmy,Föreläsning,Linux 2
+2025-09-10,15:15,2025-09-10,16:00,,,,"DSLPG23h,DSLPG24h,DSLPG25h,DSMPG23h,DSMPG24h,DSMPG25h,DSPDG23h,DSPDG24h,DSPDG25h,DSPPG23h,DSPPG24h,DSPPG25h,DVSUG23h,DVSUG24h,DVSUG25h,ITBIG23h,ITBIG24H,ITBIG25h,NSARG23h,NSARG24h,NSARG25h,SYVEG23h,SYVEG24h,SYVEG25h,UXDPG23h,UXDPG24h,UXDPG25h,WEBUG23h","Ingrid Christensson,Ulrika Granlid","Zoom,Webbinarium",Academic frameworks  https://his-se.zoom.us/j/63523922503
+2025-09-11,08:15,2025-09-11,12:00,"D204,D205,D206,D207,D208","Datorns grunder G1N, 7.5hp",,"CNAPG25h,DVSUG25h,NSARG25h","Gäst,Johan Zaxmy,Jonas Ingemarsson,Marcus Birath,Thomas Fischer",Övning,Unixövningar
+2025-09-11,13:15,2025-09-11,17:00,E101,"Grundläggande programmering med C++ G1N, 7.5hp",3,DVSUG25h,Gäst,Handledning,H1
+2025-09-11,13:15,2025-09-11,17:00,E102,"Grundläggande programmering med C++ G1N, 7.5hp",4,DVSUG25h,Gäst,Handledning,H1
+2025-09-15,08:15,2025-09-15,12:00,"D204,D205,D206,D207,D208","Datorns grunder G1N, 7.5hp",,"CNAPG25h,DVSUG25h,NSARG25h","Gäst,Johan Zaxmy,Jonas Ingemarsson,Marcus Birath,Thomas Fischer",Handledning,Linux laboration (H1)
+2025-09-15,13:15,2025-09-15,15:00,D105,"Datorns grunder G1N, 7.5hp",,"CNAPG25h,DVSUG25h,NSARG25h",Johan Zaxmy,Föreläsning,Linux 3
+2025-09-15,15:15,2025-09-15,17:00,D107,"Grundläggande programmering med C++ G1N, 7.5hp","1,2,3,4","DVSUG25h,NSARG25h",Christian Lennerholt,Föreläsning,F4
+2025-09-15,15:15,2025-09-15,16:00,,,,"DSLPG23h,DSLPG24h,DSLPG25h,DSMPG23h,DSMPG24h,DSMPG25h,DSPDG23h,DSPDG24h,DSPDG25h,DSPPG23h,DSPPG24h,DSPPG25h,DVSUG23h,DVSUG24h,DVSUG25h,ITBIG23h,ITBIG24H,ITBIG25h,NSARG23h,NSARG24h,NSARG25h,SYVEG23h,SYVEG24h,SYVEG25h,UXDPG23h,UXDPG24h,UXDPG25h,WEBUG23h","Ingrid Christensson,Ulrika Granlid","Zoom,Webbinarium",Din roll som student - akademiskt ansvar  https://his-se.zoom.us/j/61960896514
+2025-09-17,13:15,2025-09-17,17:00,"D204,D205,D206,D207,D208","Datorns grunder G1N, 7.5hp",,"CNAPG25h,DVSUG25h,NSARG25h","Gäst,Johan Zaxmy,Jonas Ingemarsson,Marcus Birath,Thomas Fischer",Handledning,Linux laboration (H2)
+2025-09-17,15:15,2025-09-17,16:00,,,,"DSLPG23h,DSLPG24h,DSLPG25h,DSMPG23h,DSMPG24h,DSMPG25h,DSPDG23h,DSPDG24h,DSPDG25h,DSPPG23h,DSPPG24h,DSPPG25h,DVSUG23h,DVSUG24h,DVSUG25h,ITBIG23h,ITBIG24H,ITBIG25h,NSARG23h,NSARG24h,NSARG25h,SYVEG23h,SYVEG24h,SYVEG25h,UXDPG23h,UXDPG24h,UXDPG25h,WEBUG23h","Ingrid Christensson,Ulrika Granlid","Zoom,Webbinarium",Your role as a student - academic responsibility  https://his-se.zoom.us/j/62301430128
+2025-09-18,13:15,2025-09-18,17:00,E101,"Grundläggande programmering med C++ G1N, 7.5hp",3,DVSUG25h,Gäst,Handledning,H2
+2025-09-18,13:15,2025-09-18,17:00,E102,"Grundläggande programmering med C++ G1N, 7.5hp",4,DVSUG25h,Gäst,Handledning,H2
+2025-09-19,08:15,2025-09-19,10:00,D105,"Datorns grunder G1N, 7.5hp",,"CNAPG25h,DVSUG25h,NSARG25h",Johan Zaxmy,Föreläsning,Comp science concepts 1
+2025-09-22,08:15,2025-09-22,12:00,"D204,D205,D206,D207,D208","Datorns grunder G1N, 7.5hp",,"CNAPG25h,DVSUG25h,NSARG25h","Gäst,Johan Zaxmy,Jonas Ingemarsson,Marcus Birath,Thomas Fischer",Handledning,Linux laboration  (H3)
+2025-09-22,13:15,2025-09-22,15:00,D105,"Datorns grunder G1N, 7.5hp",,"CNAPG25h,DVSUG25h,NSARG25h",Johan Zaxmy,Föreläsning,
+2025-09-22,15:15,2025-09-22,17:00,D107,"Grundläggande programmering med C++ G1N, 7.5hp","1,2,3,4","DVSUG25h,NSARG25h",Christian Lennerholt,Föreläsning,F5
+2025-09-24,08:15,2025-09-24,10:00,A103,"Datorns grunder G1N, 7.5hp",C,DVSUG25h,Johan Zaxmy,Övning,M1
+2025-09-24,13:15,2025-09-24,17:00,"D204,D205,D206,D207,D208","Datorns grunder G1N, 7.5hp",,"CNAPG25h,DVSUG25h,NSARG25h","Gäst,Johan Zaxmy,Jonas Ingemarsson,Marcus Birath,Thomas Fischer",Handledning,Linux laboration  (H4)
+2025-09-25,08:15,2025-09-25,10:00,A103,"Datorns grunder G1N, 7.5hp",D,"CNAPG25h,DVSUG25h",Johan Zaxmy,Övning,M1
+2025-09-25,13:15,2025-09-25,17:00,E101,"Grundläggande programmering med C++ G1N, 7.5hp",3,DVSUG25h,Gäst,Handledning,H3
+2025-09-25,13:15,2025-09-25,17:00,E102,"Grundläggande programmering med C++ G1N, 7.5hp",4,DVSUG25h,Gäst,Handledning,H3
+2025-09-29,10:15,2025-09-29,12:00,D105,"Grundläggande programmering med C++ G1N, 7.5hp","1,2,3,4","DVSUG25h,NSARG25h",Christian Lennerholt,Föreläsning,F6
+2025-09-29,15:15,2025-09-29,16:00,,,,"DSLPG23h,DSLPG24h,DSLPG25h,DSMPG23h,DSMPG24h,DSMPG25h,DSPDG23h,DSPDG24h,DSPDG25h,DSPPG23h,DSPPG24h,DSPPG25h,DVSUG23h,DVSUG24h,DVSUG25h,ITBIG23h,ITBIG24H,ITBIG25h,NSARG23h,NSARG24h,NSARG25h,SYVEG23h,SYVEG24h,SYVEG25h,UXDPG23h,UXDPG24h,UXDPG25h,WEBUG23h","Frida Lindgren,Magnus Andrén,Ulrika Granlid","Zoom,Webbinarium",Studieplanering:  https://his-se.zoom.us/j/65254361774 --- Thesis work abroad via Erasmus traineeship:  https://his-se.zoom.us/j/62746014921
+2025-09-30,08:15,2025-09-30,12:00,"D204,D205,D206,D207,D208","Datorns grunder G1N, 7.5hp",,"CNAPG25h,DVSUG25h","Gäst,Johan Zaxmy,Jonas Ingemarsson,Marcus Birath,Thomas Fischer",Examination,Practical exam Linux
+2025-09-30,13:15,2025-09-30,17:00,E101,"Grundläggande programmering med C++ G1N, 7.5hp",3,DVSUG25h,Gäst,Handledning,H4
+2025-09-30,13:15,2025-09-30,17:00,E102,"Grundläggande programmering med C++ G1N, 7.5hp",4,DVSUG25h,Gäst,Handledning,H4
+2025-10-01,13:15,2025-10-01,15:00,A103,"Datorns grunder G1N, 7.5hp",C,DVSUG25h,Johan Zaxmy,Övning,M2
+2025-10-01,15:15,2025-10-01,16:00,,,,"DSLPG23h,DSLPG24h,DSLPG25h,DSMPG23h,DSMPG24h,DSMPG25h,DSPDG23h,DSPDG24h,DSPDG25h,DSPPG23h,DSPPG24h,DSPPG25h,DVSUG23h,DVSUG24h,DVSUG25h,ITBIG23h,ITBIG24H,ITBIG25h,NSARG23h,NSARG24h,NSARG25h,SYVEG23h,SYVEG24h,SYVEG25h,UXDPG23h,UXDPG24h,UXDPG25h,WEBUG23h","Frida Lindgren,Magnus Andrén,Ulrika Granlid","Zoom,Webbinarium",Study planning:  https://his-se.zoom.us/j/68600323782 --- Thesis work abroad via Erasmus traineeship:  https://his-se.zoom.us/j/62095246745
+2025-10-02,08:15,2025-10-02,10:00,D105,"Datorns grunder G1N, 7.5hp",,"CNAPG25h,DVSUG25h,NSARG25h",Johan Zaxmy,Föreläsning,Comp science concepts 3
+2025-10-02,13:15,2025-10-02,15:00,A105,"Datorns grunder G1N, 7.5hp",D,"CNAPG25h,DVSUG25h",Johan Zaxmy,Övning,M2
+2025-10-03,08:15,2025-10-03,12:00,E101,"Grundläggande programmering med C++ G1N, 7.5hp",3,DVSUG25h,Gäst,Handledning,H5
+2025-10-03,08:15,2025-10-03,12:00,E102,"Grundläggande programmering med C++ G1N, 7.5hp",4,DVSUG25h,Gäst,Handledning,H5
+2025-10-06,10:15,2025-10-06,12:00,D107,"Grundläggande programmering med C++ G1N, 7.5hp","1,2,3,4","DVSUG25h,NSARG25h",Christian Lennerholt,Föreläsning,F8
+2025-10-06,13:15,2025-10-06,15:00,D105,"Datorns grunder G1N, 7.5hp",,"CNAPG25h,DVSUG25h,NSARG25h",Jonas Ingemarsson,Föreläsning,Windows 1
+2025-10-06,15:15,2025-10-06,17:00,D105,"Datorns grunder G1N, 7.5hp",,"CNAPG25h,DVSUG25h,NSARG25h",Jonas Ingemarsson,Föreläsning,Windows 2
+2025-10-06,15:15,2025-10-06,16:00,,,,"DSLPG23h,DSLPG24h,DSLPG25h,DSMPG23h,DSMPG24h,DSMPG25h,DSPDG23h,DSPDG24h,DSPDG25h,DSPPG23h,DSPPG24h,DSPPG25h,DVSUG23h,DVSUG24h,DVSUG25h,ITBIG23h,ITBIG24H,ITBIG25h,NSARG23h,NSARG24h,NSARG25h,SYVEG23h,SYVEG24h,SYVEG25h,UXDPG23h,UXDPG24h,UXDPG25h,WEBUG23h","Anneli Ottosson,Maria Cederlund","Zoom,Webbinarium",Balanced student life  https://his-se.zoom.us/j/69049195041
+2025-10-07,13:15,2025-10-07,17:00,"D204,D205,D206,D207,D208","Datorns grunder G1N, 7.5hp",,"CNAPG25h,DVSUG25h,NSARG25h","Gäst,Johan Zaxmy,Jonas Ingemarsson,Marcus Birath",Handledning,Windows laboration (H1)
+2025-10-08,08:15,2025-10-08,12:00,E101,"Grundläggande programmering med C++ G1N, 7.5hp",3,DVSUG25h,Gäst,Handledning,H6
+2025-10-08,08:15,2025-10-08,12:00,E102,"Grundläggande programmering med C++ G1N, 7.5hp",4,DVSUG25h,Gäst,Handledning,H6
+2025-10-08,12:15,2025-10-08,13:15,,,,"DSLPG23h,DSLPG24h,DSLPG25h,DSMPG23h,DSMPG24h,DSMPG25h,DSPDG23h,DSPDG24h,DSPDG25h,DSPPG23h,DSPPG24h,DSPPG25h,DVSUG23h,DVSUG24h,DVSUG25h,ITBIG23h,ITBIG24H,ITBIG25h,NSARG23h,NSARG24h,NSARG25h,SYVEG23h,SYVEG24h,SYVEG25h,UXDPG23h,UXDPG24h,UXDPG25h,WEBUG23h",Frida Lindgren,Övrigt,Studera utomlands; infoträff om utlandsstudier via Högskolan i Skövde (infon ges på svenska)  Sal: D105
+2025-10-08,15:15,2025-10-08,16:00,,,,"DSLPG23h,DSLPG24h,DSLPG25h,DSMPG23h,DSMPG24h,DSMPG25h,DSPDG23h,DSPDG24h,DSPDG25h,DSPPG23h,DSPPG24h,DSPPG25h,DVSUG23h,DVSUG24h,DVSUG25h,ITBIG23h,ITBIG24H,ITBIG25h,NSARG23h,NSARG24h,NSARG25h,SYVEG23h,SYVEG24h,SYVEG25h,UXDPG23h,UXDPG24h,UXDPG25h,WEBUG23h","Cecilia Vikenstrand,Ingela Cederberg","Zoom,Webbinarium",Studieteknik  https://his-se.zoom.us/j/69683525662
+2025-10-08,17:15,2025-10-08,18:30,,,,"DSLPG23h,DSLPG24h,DSLPG25h,DSMPG23h,DSMPG24h,DSMPG25h,DSPDG23h,DSPDG24h,DSPDG25h,DSPPG23h,DSPPG24h,DSPPG25h,DVSUG23h,DVSUG24h,DVSUG25h,ITBIG23h,ITBIG24H,ITBIG25h,NSARG23h,NSARG24h,NSARG25h,SYVEG23h,SYVEG24h,SYVEG25h,UXDPG23h,UXDPG24h,UXDPG25h,WEBUG23h",Frida Lindgren,"Övrigt,Zoom",Studera utomlands; infoträff om utlandsstudier via Högskolan i Skövde (infon ges på svenska)  Via Zoom: https://his-se.zoom.us/j/63606494004
+2025-10-10,08:15,2025-10-10,10:00,D105,"Datorns grunder G1N, 7.5hp",,"CNAPG25h,DVSUG25h,NSARG25h",Jonas Ingemarsson,Föreläsning,Windows 3
+2025-10-13,08:15,2025-10-13,12:00,"D204,D205,D206,D207,D208","Datorns grunder G1N, 7.5hp",,"CNAPG25h,DVSUG25h,NSARG25h","Gäst,Johan Zaxmy,Jonas Ingemarsson,Marcus Birath",Handledning,Windows laboration (H2)
+2025-10-13,13:15,2025-10-13,15:00,D107,"Grundläggande programmering med C++ G1N, 7.5hp","1,2,3,4","DVSUG25h,NSARG25h",Christian Lennerholt,Föreläsning,F9
+2025-10-15,13:15,2025-10-15,17:00,"D204,D205,D206,D207,D208","Datorns grunder G1N, 7.5hp",,"CNAPG25h,DVSUG25h,NSARG25h","Gäst,Johan Zaxmy,Jonas Ingemarsson,Marcus Birath",Handledning,Windows laboration (H3)
+2025-10-15,15:15,2025-10-15,16:00,,,,"DSLPG23h,DSLPG24h,DSLPG25h,DSMPG23h,DSMPG24h,DSMPG25h,DSPDG23h,DSPDG24h,DSPDG25h,DSPPG23h,DSPPG24h,DSPPG25h,DVSUG23h,DVSUG24h,DVSUG25h,ITBIG23h,ITBIG24H,ITBIG25h,NSARG23h,NSARG24h,NSARG25h,SYVEG23h,SYVEG24h,SYVEG25h,UXDPG23h,UXDPG24h,UXDPG25h,WEBUG23h","Cecilia Vikenstrand,Ingela Cederberg","Zoom,Webbinarium",Study technique  https://his-se.zoom.us/j/66939501721
+2025-10-16,13:15,2025-10-16,17:00,E101,"Grundläggande programmering med C++ G1N, 7.5hp",3,DVSUG25h,Gäst,Handledning,H7
+2025-10-16,13:15,2025-10-16,17:00,E102,"Grundläggande programmering med C++ G1N, 7.5hp",4,DVSUG25h,Gäst,Handledning,H7
+2025-10-20,13:15,2025-10-20,15:00,D105,"Datorns grunder G1N, 7.5hp",,"CNAPG25h,DVSUG25h,NSARG25h",Jonas Ingemarsson,Föreläsning,History of computing
+2025-10-20,15:15,2025-10-20,17:00,D107,"Grundläggande programmering med C++ G1N, 7.5hp","1,2,3,4","DVSUG25h,NSARG25h",Christian Lennerholt,Föreläsning,F10
+2025-10-21,08:15,2025-10-21,12:00,"D204,D205,D206,D207,D208","Datorns grunder G1N, 7.5hp",,"CNAPG25h,DVSUG25h,NSARG25h","Gäst,Johan Zaxmy,Jonas Ingemarsson,Marcus Birath",Handledning,Windows laboration (H4)
+2025-10-23,13:15,2025-10-23,17:00,E101,"Grundläggande programmering med C++ G1N, 7.5hp",3,DVSUG25h,Gäst,Handledning,H8
+2025-10-23,13:15,2025-10-23,17:00,E102,"Grundläggande programmering med C++ G1N, 7.5hp",4,DVSUG25h,Gäst,Handledning,H8
+2025-10-29,08:15,2025-10-29,12:00,"D204,D205,D206,D207,D208","Datorns grunder G1N, 7.5hp",,"CNAPG25h,DVSUG25h,NSARG25h","Gäst,Johan Zaxmy,Jonas Ingemarsson,Marcus Birath,Thomas Fischer",Omexamination,Practical re-exam Linux
+2025-10-30,08:15,2025-10-30,12:30,,"Datorns grunder G1N, 7.5hp",,"CNAPG25h,DVSUG25h,NSARG25h","Johan Zaxmy,Thomas Fischer","Tentamen,Tentamen",
