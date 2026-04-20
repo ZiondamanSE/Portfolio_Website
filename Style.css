@@ -1,0 +1,84 @@
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: radial-gradient(circle, #FEFAE0 0%, #FAEDCD 100%);
+    font-family: "Geologica", sans-serif;
+}
+
+.geologica{
+  font-family: "Geologica", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0,
+    "SHRP" 0;
+}
+
+.content {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-top: 10%;
+}
+
+
+.sideWindow {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 422px;
+}
+
+.projects{
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sideTable {
+    display: flex;
+    flex-direction: column;   
+    width: 274px;
+    height: auto;   
+    margin-right: 32%         
+}
+
+.pfp{
+    width: 100%;
+    height: 100%;
+}
+
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    flex: 1;
+}
+
+.project-card {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-card img {
+    border-radius: 12px;
+    width: 102%;
+    height: 151px;
+    object-fit: cover;
+}
+
+.project-title {
+    margin-top: 10px;
+    font-size: 120%;
+}

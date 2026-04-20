@@ -1,91 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zion Martincich</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/x-icon" href="Gjq5w-PWgAA4akg.png">
-</head>
-<body>
-  <!-- Audio with controls for testing (remove 'controls' when done testing) (ye i never did that)-->
-  <img class="background-pixel" src="Background.gif" alt="" />
-  <audio id="background-audio" src="background.mp3" type="audio/mpeg" loop></audio>
-
-<!-- i want you to know babey-->
-  <div class="name-title">
-    <p class="name">Zion Martincich</p>
-    <p class="title">Programer / Graphics Arts</p>
-  </div>
-
-  <!-- i love you like a love song babey-->
-  <div class="social-icons">
-    <a href="https://github.com/ZiondamanSE" target="_blank">GitHub</a>
-    <a href="https://x.com/ziondaman_Sv" target="_blank">Twitter</a>
-    <a href="https://www.linkedin.com/in/ziondaman" target="_blank">LinkedIn</a>
-    <a href="https://ziondaman.itch.io" target="_blank">Itch.io</a>
-    <a href="https://www.youtube.com/@noizsv" target="_blank">YouTube</a>
-  </div>
-  <!-- aha-  i love you like a love song babey-->
-  <div class="content-wrapper">
-    <div class="about">
-      <p class="section-title">About me</p>
-      <p class="section-text">
-I am a Swedish programmer and graphic designer.
-I studied game programming at LBS Norra, and in my free time, I’ve done freelance graphic design for several clients. I also worked part-time as the media head for a gaming group called SOF TAC Gaming.
-      </p>
-
-        <!-- i keep hitting on rep-rep-repeat -->
-      <div class="skills">
-        <p class="section-title">Skills</p>
-        <ul class="skills-list">
-          <li>Unity / C#</li>
-          <li>Photoshop / Illustrator</li>
-          <li>Premiere Pro / After Effects</li>
-          <li>Maya / Fusion 360</li>
-          <li>Git / GitHub</li>
-        </ul>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Geologica:wght,CRSV@100..900,0&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="Style.css">
+      <title>siteIsDown</title>
+   </head>
+   <body>
+      <div class="content">
+         <div class="sideWindow">
+            <table class="sideTable">
+               <tr>
+                  <td><img class="pfp" src="Imiges\Untitled.png" alt=""></td>
+               </tr>
+               <tr>
+                  <td>NAME : Ziondaman </td>
+               </tr>
+               <tr>
+                  <td>
+                     <p id="result"></p>
+                  </td>
+               </tr>
+               <tr>
+                  <td>PROFESSION : Student at His </td>
+               </tr>
+               <tr>
+                <td><p>hello and welcome, to my wonderfull protfolio. amazing right? if you are reading this you just randomy found the page, dont worry constuchson is still underway. the main plan is to work on some projects and then come back and complete this. sry. <br><br> glhf <br><br> - zion
+                </p></td>
+               </tr>
+            </table>
+         </div>
+         <div class="projects">
+            <a href="https://goonsite.se/" class="project-card">
+               <img src="Imiges\1.jpg" alt="Project 1" />
+               <p class="project-title">BEAKS PER MINUTE</p>
+            </a>
+            <a href="https://goonsite.se/" class="project-card">
+               <img src="Imiges\2.jpg" alt="Project 2" />
+               <p class="project-title">My Graphic Design Works</p>
+            </a>
+            <a href="https://goonsite.se/" class="project-card">
+               <img src="Imiges\3.jpg" alt="Project 3" />
+               <p class="project-title">Unborn Project</p>
+            </a>
+            <a href="https://goonsite.se/" class="project-card">
+               <img src="Imiges\4.jpg" alt="Project 4" />
+               <p class="project-title">RPG</p>
+            </a>
+         </div>
       </div>
-    </div>
-
-    <div class="projects">
-      <a href="Project1.html" class="project-card">
-        <img src="BPM.gif" alt="Project 1" />
-        <p class="project-title">BEAKS PER MINUTE</p>
-      </a>
-      <a href="Project2.html" class="project-card">
-        <img src="GTKIrI6WoAAodaG.jpg" alt="Project 2" />
-        <p class="project-title">My Graphic Design Works</p>
-      </a>
-      <a href="Project3.html" class="project-card">
-        <img src="1.png" alt="Project 3" />
-        <p class="project-title">Unborn Project</p>
-      </a>
-      <a href="Project4.html" class="project-card">
-        <img src="Deltatrun.png" alt="Project 4" />
-        <p class="project-title">RPG</p>
-      </a>
-    </div>
-  </div>
-  
-  <footer class="site-footer">
-    <p>DESIGN BY FLESH, PRODUCTION OF MACHINE, PRODUCED BY MAN.</p>
-    <p> - ZIONDAMAN - </p>
-  </footer>
-
-  <!-- Audio playback script -->
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    const audio = document.getElementById('background-audio');
-    audio.volume = 0.2; // Set volume to 20%
-    const startAudio = () => {
-      audio.play().catch(e => {
-        console.warn('Audio blocked:', e);
-      });
-      window.removeEventListener('click', startAudio);
-    };
-    window.addEventListener('click', startAudio);
-  });
-</script>
-</body>
+      <script src="script.js"></script>
+   </body>
 </html>
